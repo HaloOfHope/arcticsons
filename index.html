@@ -72,62 +72,81 @@
     // i.e. imgs/ml-images
     imageFolder: "imgs",
 
+    // Columns the search looks through by default
+    searchParams: ['id', 'owner', 'artist', 'designer'],
+
     };
   </script>
 
   <!-- --------------------------------------------------------------------
+  <-- 
   <-- Navbar 
+  <-- 
   <-------------------------------------------------------------------- -->
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container">
+
+      <!-- Brand -->
       <a class="navbar-brand" href="#"><i class="bi bi-box2-heart"></i> Charadex</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+
+      <!-- Toggle -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#charadexnav">
         <i class="bi bi-list"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="charadexnav">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
               Dropdown
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link</a>
+              <a class="dropdown-item" href="#">Link</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Link</a>
             </div>
           </li>
+
         </ul>
       </div>
+
     </div>
   </nav>
 
   <div class="spinner-border m-auto" id="loading"></div>
   
   <!-- --------------------------------------------------------------------
+  <-- 
   <-- Masterlist
+  <-- 
   <-------------------------------------------------------------------- -->
   <div class="container masterlist-container d-flex flex-column py-md-5 py-4">
 
+    <!-- Species Buttons Render
+    ------------------------------------------------------------------- -->
     <div class="card p-4 mb-4" style="display:none;" id="species-buttons">
       <ul class="row no-gutters list list-unstyled m-n2"></ul>
     </div>
 
+
+    <!-- Gallery Container
+    ------------------------------------------------------------------- -->
     <div id="charadex-gallery">
 
-      <div class="card p-4 mb-4" style="display:none;" id="charadex-filters">
 
+      <!-- Filters
+      ----------------------------------------------------------------- -->
+      <div class="card p-4 mb-4 sticky-top" style="display:none;" id="charadex-filters">
         <div class="row no-gutters m-n2">
 
-          <!-- Search -->
-          <div class="col-md-2 p-1">
+          <!-- Custom Filter -->
+          <div class="col-md-2 col-12 p-1">
             <select class="form-control bg-faded" filter="designtype" id="filter">
               <option>All</option>
               <option>Official Design</option>
@@ -136,10 +155,10 @@
             </select>
           </div>
 
-          <!-- Search -->
-          <div class="col-md-2 p-1">
+          <!-- Search Filter -->
+          <div class="col-md-2 col-3 p-1">
             <select class="form-control bg-faded" id="search-filter">
-              <option></option>
+              <option>All</option>
               <option>Worth</option>
               <option>Owner</option>
               <option>Designer</option>
@@ -147,13 +166,13 @@
             </select>
           </div>
 
-          <!-- Search -->
-          <div class="col-3 p-1">
+          <!-- Search Bar -->
+          <div class="col-md-3 col-9 p-1">
             <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
           </div>
 
           <!-- Top Pagination -->
-          <div class="col-5 d-flex justify-content-end p-1">
+          <div class="col-md-5 col-12 d-flex justify-content-md-end justify-content-center p-1">
             <div class="nav d-flex">
               <div class="btn-prev page-item"><a class="page-link"><i class="bi bi-chevron-left"></i></a></div>
               <ul class="pagination pagination-top justify-content-center m-0"></ul>
@@ -162,10 +181,11 @@
           </div>
 
         </div>
-      
       </div>
 
-      <!-- Masterlist Container -->
+
+      <!-- Repeated Items Render Here
+      ----------------------------------------------------------------- -->
       <ul class="row no-gutters list list-unstyled m-n2"></ul>
 
     </div>
@@ -173,8 +193,13 @@
   </div>
 
 
+  
   <!-- --------------------------------------------------------------------
+  <-- 
   <-- Footer
+  <-- Please do not remove the credit - other creators might need a
+  <-- similar tool!
+  <-- 
   <-------------------------------------------------------------------- -->
   <div class="footer bg-dark p-md-5 p-4 text-center">
     <p><a class="text-reset" href="">[Species] © [Owner]</a></p>
@@ -183,10 +208,13 @@
 
 
   <!-- --------------------------------------------------------------------
+  <-- 
   <-- Repeat Items
   <-- Do not remove 'display:none;'
+  <-- 
   <-------------------------------------------------------------------- -->
   <div style="display:none;">
+
 
     <!-- Species Buttons
     ------------------------------------------------------------------- -->
@@ -210,6 +238,8 @@
     <!-- Singular Item
     ------------------------------------------------------------------- -->
     <li class="col-12 p-2" id="charadex-card">
+
+      <!-- Prev & Next Topbar -->
       <div class="card p-4 mb-4">
         <div class="row no-gutters m-n1 text-sans-serif font-weight-bold text-uppercase">
           <div class="col-4 p-1"><a id="entryPrev" href=""><i class="bi bi-chevron-left mr-2"></i><span></span></a></div>
@@ -217,19 +247,27 @@
           <div class="col-4 p-1 text-right"><a id="entryNext" href=""><span></span><i class="bi bi-chevron-right ml-2"></i></a></div>
         </div>
       </div>
+
+      <!-- Actual Card -->
       <div class="card">
 
         <!-- Header -->
         <h2 class="card-header text-center p-4 id"></h2>
 
+
+        <!--Main Info -->
         <div class="row no-gutters p-3">
 
+
+          <!-- Image -->
           <div class="col-6 p-3">
             <div class="mx-auto w-100 text-center" oncontextmenu="return false">
               <img class="image img-fluid" src="">
             </div>
           </div>
 
+
+          <!-- Information List -->
           <div class="col-6 p-3">
             
             <!-- Item -->
@@ -282,10 +320,13 @@
               </div>
             </div>
 
+            <!-- Add more list items above this line-->
           </div>
         </div>
       </div> 
     </li>
+
+
   </div>
 
   <!-- ----------------------------------------------------------------- -->
