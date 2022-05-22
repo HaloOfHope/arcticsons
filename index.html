@@ -70,15 +70,14 @@
     // the path to your folder. Note that the 'Images' column must be
     // removed from the Google Sheet.
     // i.e. imgs/ml-images
-    imageFolder: "imgs",
+    imageFolder: "",
 
     // Columns the search looks through by default
     searchParams: ['id', 'owner', 'artist', 'designer'],
 
     // Creates 1 URL parameter that will filter the list based on a
     // column of your choosing.
-    // Make sure it's all one word with no spaces! 
-    urlFilterParam: 'designtype',
+    urlFilterParam: 'species',
 
     };
   </script>
@@ -247,9 +246,9 @@
       <!-- Prev & Next Topbar -->
       <div class="card p-4 mb-4">
         <div class="row no-gutters m-n1 text-sans-serif font-weight-bold text-uppercase">
-          <div class="col-4 p-1"><a id="entryPrev" href=""><i class="bi bi-chevron-left mr-2"></i><span></span></a></div>
-          <div class="col-4 text-center p-1"><a id="masterlistLink" href="">Masterlist</a></div>
-          <div class="col-4 p-1 text-right"><a id="entryNext" href=""><span></span><i class="bi bi-chevron-right ml-2"></i></a></div>
+          <div class="col-md-4 col-12 text-center p-1 order-md-1"><a id="masterlistLink" href="">Masterlist</a></div>
+          <div class="col-md-4 col-6 p-1"><a id="entryPrev" href=""><i class="bi bi-chevron-left mr-2"></i><span></span></a></div>
+          <div class="col-md-4 col-6 text-right p-1 order-md-1"><a id="entryNext" href=""><span></span><i class="bi bi-chevron-right ml-2"></i></a></div>
         </div>
       </div>
 
@@ -261,11 +260,11 @@
 
 
         <!--Main Info -->
-        <div class="row no-gutters p-3">
+        <div class="row no-gutters p-md-5 p-4">
 
 
           <!-- Image -->
-          <div class="col-6 p-3">
+          <div class="col-md-6 p-3">
             <div class="mx-auto w-100 text-center" oncontextmenu="return false">
               <img class="image img-fluid" src="">
             </div>
@@ -273,7 +272,7 @@
 
 
           <!-- Information List -->
-          <div class="col-6 p-3">
+          <div class="col-md-6 p-3">
             
             <!-- Item -->
             <div class="d-flex justify-content-between mb-2">

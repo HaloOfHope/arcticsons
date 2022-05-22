@@ -36,7 +36,7 @@ const charadex = (options) => {
     itemOrder: userOptions.itemOrder || "desc",
     imageFolder: userOptions.imageFolder || false,
     searchParams: userOptions.searchParams || ['id', 'owner', 'artist', 'designer'],
-    urlFilterParam: userOptions.urlFilterParam || false,
+    urlFilterParam: userOptions.urlFilterParam.toLowerCase().replace(/\s/g,'') || false,
   };
 
 
