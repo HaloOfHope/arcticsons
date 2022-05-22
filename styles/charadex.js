@@ -11,6 +11,7 @@ const charadex = (options) => {
     itemOrder: "",
     imageFolder: "",
     searchParams: "",
+    urlFilterParam: "",
   };
 
 
@@ -35,6 +36,7 @@ const charadex = (options) => {
     itemOrder: userOptions.itemOrder || "desc",
     imageFolder: userOptions.imageFolder || false,
     searchParams: userOptions.searchParams || ['id', 'owner', 'artist', 'designer'],
+    urlFilterParam: userOptions.urlFilterParam || false,
   };
 
 
@@ -83,35 +85,38 @@ const charadex = (options) => {
       /* And so it begins
       /* ================================================================ */
       let sheetArray = scrubData(JSON); // Clean up sheet data so we can use it
-      let preParam = url.href.includes('species') ? '&id=' : '?id='; // Determines which is used in a link
+      let preParam = url.search.includes(charadexInfo.urlFilterParam) ? '&id=' : '?id='; // Determines which is used in a link
 
 
       /* ================================================================ */
-      /* Species Buttons
+      /* URL Param Buttons
       /* ================================================================ */
       (() => {
 
-        if (sheetArray[0].hasOwnProperty('species')) {
+        if (sheetArray[0].hasOwnProperty(charadexInfo.urlFilterParam)) {
 
-          $('#species-buttons').show();
+          $('#filter-buttons').show();
 
-          let speciesArray = [];
-          const uniqueSpecies = [...new Set(sheetArray.map(s => s.species))];
-          uniqueSpecies.forEach((s) => {
-            speciesArray.push({
-              species: s,
-              link: url.href.split('&')[0].split('?')[0] + '?species=' + s.toLowerCase(),
+          let urlParamArray = [];
+          const uniqueArray = [...new Set(sheetArray.map(i => i[charadexInfo.urlFilterParam]))];
+          uniqueArray.forEach((i) => {
+            urlParamArray.push({
+              title: i,
+              link: url.href.split('&')[0].split('?')[0] + '?' + charadexInfo.urlFilterParam + '=' + i.toLowerCase(),
             });
           });
+      
+          // Sorts list
+          urlParamArray.sort((a, b) => {return a.title - b.title})
         
           // List.js options
           let buttonOptions = {
-            valueNames: ['species', {name: 'link', attr: 'href'}],
-            item: 'charadex-species',
+            valueNames: ['title', {name: 'link', attr: 'href'}],
+            item: 'charadex-filter-buttons',
           };
   
           // Creates singular item
-          let speciesButtons = new List("species-buttons", buttonOptions, speciesArray);
+          let urlParamButtons = new List("filter-buttons", buttonOptions, urlParamArray);
 
         }
 
@@ -147,8 +152,8 @@ const charadex = (options) => {
         // Sorts list from small to beeg number
         sheetArray.sort((a, b) => {return a.orderID - b.orderID})
 
-        // Filters out species based on URL parameters
-        if (urlParams.has('species')) {sheetArray = sheetArray.filter((i) => i.species.toLowerCase() === urlParams.get('species').toLowerCase());}
+        // Filters out information based on URL parameters
+        if (urlParams.has(charadexInfo.urlFilterParam) && charadexInfo.urlFilterParam) {sheetArray = sheetArray.filter((i) => i[charadexInfo.urlFilterParam].toLowerCase() === urlParams.get(charadexInfo.urlFilterParam).toLowerCase());}
 
       })();
 

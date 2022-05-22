@@ -75,6 +75,11 @@
     // Columns the search looks through by default
     searchParams: ['id', 'owner', 'artist', 'designer'],
 
+    // Creates 1 URL parameter that will filter the list based on a
+    // column of your choosing.
+    // Make sure it's all one word with no spaces! 
+    urlFilterParam: 'designtype',
+
     };
   </script>
 
@@ -128,9 +133,9 @@
   <-------------------------------------------------------------------- -->
   <div class="container masterlist-container d-flex flex-column py-md-5 py-4">
 
-    <!-- Species Buttons Render
+    <!-- URL Param Filter Buttons Render
     ------------------------------------------------------------------- -->
-    <div class="card p-4 mb-4" style="display:none;" id="species-buttons">
+    <div class="card p-4 mb-4" style="display:none;" id="filter-buttons">
       <ul class="row no-gutters list list-unstyled m-n2"></ul>
     </div>
 
@@ -216,10 +221,10 @@
   <div style="display:none;">
 
 
-    <!-- Species Buttons
+    <!-- URL Param Filter Buttons Render
     ------------------------------------------------------------------- -->
-    <li class="col-lg col-sm-6 p-2" id="charadex-species">
-      <a class="btn btn-primary d-block link species" href=""></a>
+    <li class="col-lg col-sm-6 p-2" id="charadex-filter-buttons">
+      <a class="btn btn-primary d-block link title" href=""></a>
     </li>
                 
 
