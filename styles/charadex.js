@@ -1,4 +1,4 @@
-const speciesMasterlist = (options) => {
+const charadex = (options) => {
 
   /* ==================================================================== */
   /* Importing Your Options
