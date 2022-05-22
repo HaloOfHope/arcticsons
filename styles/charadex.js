@@ -76,20 +76,52 @@ const speciesMasterlist = (options) => {
     .then(i => i.text())
     .then(JSON => {
 
+      $('#loading').hide();
+      $('.masterlist-container').addClass('softload');
 
       /* ================================================================ */
       /* And so it begins
       /* ================================================================ */
       let sheetArray = scrubData(JSON); // Clean up sheet data so we can use it
       let preParam = url.href.includes('species') ? '&id=' : '?id='; // Determines which is used in a link
+
+
+      /* ================================================================ */
+      /* Species Buttons
+      /* ================================================================ */
+      (() => {
+
+        if (sheetArray[0].hasOwnProperty('species')) {
+
+          $('#species-buttons').show();
+
+          let speciesArray = [];
+          const uniqueSpecies = [...new Set(sheetArray.map(s => s.species))];
+          uniqueSpecies.forEach((s) => {
+            speciesArray.push({
+              species: s,
+              link: url.href.split('&')[0].split('?')[0] + '?species=' + s.toLowerCase(),
+            });
+          });
+        
+          // List.js options
+          let buttonOptions = {
+            valueNames: ['species', {name: 'link', attr: 'href'}],
+            item: 'charadex-species',
+          };
+  
+          // Creates singular item
+          let speciesButtons = new List("species-buttons", buttonOptions, speciesArray);
+
+        }
+
+      })();
         
 
       /* ================================================================ */
       /* Modifying Array
       /* ================================================================ */
       (() => {
-
-        console.log(sheetArray);
 
         let len = sheetArray.length;
         while (len--) {
@@ -99,11 +131,11 @@ const speciesMasterlist = (options) => {
 
           // Adding images (if you choose to upload to your site instead)
           if (charadexInfo.imageFolder && !sheetArray[0].hasOwnProperty('image')) {
-            sheetArray[len].image = `${url.origin}/${charadexInfo.imageFolder}/myo.png`;
+            sheetArray[len].image = `${charadexInfo.imageFolder}/myo.png`;
             if (sheetArray[len].designer && sheetArray[len].artist) {
-              sheetArray[len].image = `${url.origin}/${charadexInfo.imageFolder}/${sheetArray[len].id}.png`;
-            } else if (sheetArray[len].species != '' && (sheetArray[len].designer == '' && sheetArray[len].artist == '')) {
-              sheetArray[len].image = `${url.origin}/${charadexInfo.imageFolder}/myo_${sheetArray[len].species.toLowerCase()}.png`;
+              sheetArray[len].image = `${charadexInfo.imageFolder}/${sheetArray[len].id}.png`;
+            } else if (sheetArray[0].hasOwnProperty('species') && (sheetArray[len].designer == '' && sheetArray[len].artist == '')) {
+              sheetArray[len].image = `${charadexInfo.imageFolder}/myo_${sheetArray[len].species.toLowerCase()}.png`;
             }
           }
 
@@ -199,7 +231,7 @@ const speciesMasterlist = (options) => {
         /* ================================================================ */
         /* Charadex Gallery
         /* ================================================================ */
-        $('#charadex-shit').show();
+        $('#charadex-filters').show();
 
         (() => { 
 

@@ -56,8 +56,8 @@
     let yourOptions = {
 
     // Sheet Information
-    sheetID: "1l_F95Zhyj5OPQ0zs-54pqacO6bVDiH4rlh16VhPNFUc",
-    sheetPage: "Public Masterlist",
+    sheetID: "1NclmNdLUJkv92tsOwbrtJPK31TniXUIplhfLF6nHVpQ",
+    sheetPage: "Faejin",
 
     // Amount of items shown on the page. Default is 12.
     itemAmount: 12,
@@ -70,18 +70,18 @@
     // the path to your folder. Note that the 'Images' column must be
     // removed from the Google Sheet.
     // i.e. imgs/ml-images
-    imageFolder: "",
+    imageFolder: "imgs",
 
     };
   </script>
 
-  <!-- ----------------------------------------------------------------- -->
-  <!-- Navbar                                                            -->
-  <!-- ----------------------------------------------------------------- -->
+  <!-- --------------------------------------------------------------------
+  <-- Navbar 
+  <-------------------------------------------------------------------- -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-md-5 py-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#"><i class="bi bi-box2-heart"></i> Charadex</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <i class="bi bi-list"></i>
       </button>
@@ -109,82 +109,106 @@
     </div>
   </nav>
 
-  <!-- ----------------------------------------------------------------- -->
-  <!-- Masterlist                                                        -->
-  <!-- ----------------------------------------------------------------- -->
+  <div class="spinner-border m-auto" id="loading"></div>
+  
+  <!-- --------------------------------------------------------------------
+  <-- Masterlist
+  <-------------------------------------------------------------------- -->
+  <div class="container masterlist-container d-flex flex-column py-md-5 py-4">
 
-  <div class="container py-md-5 py-4" style="min-height:calc(100vh - 56px)" id="charadex-gallery">
-
-    <div class="card p-4 mb-4" style="display:none;" id="charadex-shit">
-
-      <hr>
-
-      <div class="row no-gutters m-n2">
-
-        <!-- Search -->
-        <div class="col-md-auto p-1">
-          <select class="form-control bg-faded" filter="designtype" id="filter">
-            <option>All</option>
-            <option>Official Design</option>
-            <option>Guest Design</option>
-            <option>MYO Design</option>
-          </select>
-        </div>
-
-        <!-- Search -->
-        <div class="col-md-auto p-1">
-          <select class="form-control bg-faded" id="search-filter">
-            <option></option>
-            <option>Worth</option>
-            <option>Owner</option>
-            <option>Designer</option>
-            <option>Artist</option>
-          </select>
-        </div>
-
-        <!-- Search -->
-        <div class="col-3 p-1">
-          <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
-        </div>
-
-        <!-- Top Pagination -->
-        <div class="col-auto ml-auto my-auto p-1">
-          <div class="nav d-flex">
-            <div class="btn-prev page-item"><a class="page-link"><i class="bi bi-chevron-left"></i></a></div>
-            <ul class="pagination pagination-top justify-content-center m-0"></ul>
-            <div class="btn-next page-item"><a class="page-link"><i class="bi bi-chevron-right"></i></a></div>
-          </div>
-        </div>
-
-      </div>
-    
+    <div class="card p-4 mb-4" style="display:none;" id="species-buttons">
+      <ul class="row no-gutters list list-unstyled m-n2"></ul>
     </div>
 
-    <!-- Masterlist Container -->
-    <ul class="row no-gutters list list-unstyled m-n2"></ul>
+    <div id="charadex-gallery">
+
+      <div class="card p-4 mb-4" style="display:none;" id="charadex-filters">
+
+        <div class="row no-gutters m-n2">
+
+          <!-- Search -->
+          <div class="col-md-2 p-1">
+            <select class="form-control bg-faded" filter="designtype" id="filter">
+              <option>All</option>
+              <option>Official Design</option>
+              <option>Guest Design</option>
+              <option>MYO Design</option>
+            </select>
+          </div>
+
+          <!-- Search -->
+          <div class="col-md-2 p-1">
+            <select class="form-control bg-faded" id="search-filter">
+              <option></option>
+              <option>Worth</option>
+              <option>Owner</option>
+              <option>Designer</option>
+              <option>Artist</option>
+            </select>
+          </div>
+
+          <!-- Search -->
+          <div class="col-3 p-1">
+            <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
+          </div>
+
+          <!-- Top Pagination -->
+          <div class="col-5 d-flex justify-content-end p-1">
+            <div class="nav d-flex">
+              <div class="btn-prev page-item"><a class="page-link"><i class="bi bi-chevron-left"></i></a></div>
+              <ul class="pagination pagination-top justify-content-center m-0"></ul>
+              <div class="btn-next page-item"><a class="page-link"><i class="bi bi-chevron-right"></i></a></div>
+            </div>
+          </div>
+
+        </div>
+      
+      </div>
+
+      <!-- Masterlist Container -->
+      <ul class="row no-gutters list list-unstyled m-n2"></ul>
+
+    </div>
 
   </div>
 
-  
-  <!-- 
-  ---------------------------------------------------------------------- -->
-  <div style="display:none;"> <!-- Do not remove display: none -->
+
+  <!-- --------------------------------------------------------------------
+  <-- Footer
+  <-------------------------------------------------------------------- -->
+  <div class="footer bg-dark p-md-5 p-4 text-center">
+    <p><a class="text-reset" href="">[Species] © [Owner]</a></p>
+    <p><a href="https://charadex.com">Powered by Charadex</a></p>
+  </div>
+
+
+  <!-- --------------------------------------------------------------------
+  <-- Repeat Items
+  <-- Do not remove 'display:none;'
+  <-------------------------------------------------------------------- -->
+  <div style="display:none;">
+
+    <!-- Species Buttons
+    ------------------------------------------------------------------- -->
+    <li class="col-lg col-sm-6 p-2" id="charadex-species">
+      <a class="btn btn-primary d-block link species" href=""></a>
+    </li>
                 
-    <!-- Container -->
-    <li class="col-xl-3 col-lg-4 col-sm-6 p-2" id="charadex-entries">
-                
-      <!-- Card -->
-      <a href="" class="card h-100 overflow-hidden link">
-                
-        <!-- ID -->
+
+    <!-- Gallery Items
+    ------------------------------------------------------------------- -->
+    <li class="col-lg-3 col-sm-6 p-2" id="charadex-entries">
+      <a class="card h-100 link" href="">
         <h5 class="card-header text-center id"></h5>
         <div class="card-body d-flex flex-fill">
-          <img class="image img-fluid m-auto" style="max-height:200px;" src="" oncontextmenu="return false">
+          <img class="image img-fluid m-auto" src="" oncontextmenu="return false">
         </div>
       </a>
     </li>
 
 
+    <!-- Singular Item
+    ------------------------------------------------------------------- -->
     <li class="col-12 p-2" id="charadex-card">
       <div class="card p-4 mb-4">
         <div class="row no-gutters m-n1 text-sans-serif font-weight-bold text-uppercase">
@@ -264,16 +288,6 @@
 
   </div>
 
-
-  <!-- ----------------------------------------------------------------- -->
-  <!-- Footer                                                            -->
-  <!-- ----------------------------------------------------------------- -->
-  <div class="footer bg-dark p-md-5 p-4 text-center">
-    <p><a class="text-reset" href="">[Species] © [Owner]</a></p>
-    <p><a href="https://charadex.com">Powered by Charadex</a></p>
-  </div>
-
-
   <!-- ----------------------------------------------------------------- -->
   <!-- JS                                                                -->
   <!-- ----------------------------------------------------------------- -->
@@ -289,7 +303,7 @@
 
   <!-- Charadex Script -->
   <script src="styles/charadex.js"></script>
-  <script>speciesMasterlist();</script>
+  <script>speciesMasterlist(yourOptions);</script>
 
 
 </body>
