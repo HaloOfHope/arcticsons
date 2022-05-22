@@ -260,7 +260,7 @@ const speciesMasterlist = (options) => {
           $("#filter").on('change', () => {
             let selection = $("#filter option:selected").text().toLowerCase();
             let filterType = $("#filter").attr('filter');
-            if (selection && selection != 'all') {
+            if (selection && !selection.includes('all')) {
               charadex.filter(function (i) {return i.values()[filterType].toLowerCase() == selection;});
             } else {
               charadex.filter();

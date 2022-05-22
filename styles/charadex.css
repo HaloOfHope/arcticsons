@@ -15,21 +15,21 @@
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
-  --cd-primary-color:                    #F2A68D;
-  --cd-primary-text-color:               #3a2f2b;
+  --cd-primary-color:                    #8FB7D4;
+  --cd-primary-text-color:               #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
-  --cd-secondary-color:                  #7c7c7c;
-  --cd-secondary-text-color:             #161616;
+  --cd-secondary-color:                  #939799;
+  --cd-secondary-text-color:             #fff;
 
   /* ============================================================= */
   /* Backgrounds
   ================================================================ */
-  --cd-body-background-color:            #cacaca;
+  --cd-body-background-color:            #e9e9e9;
   --cd-content-background-color:         #ffffff;
-  --cd-faded-background-color:           #eeeeee;
+  --cd-faded-background-color:           #e9e9e9;
 
   /* Background Extras */
   --cd-body-background-image:              url();
@@ -37,8 +37,8 @@
   /* ============================================================= */
   /* Text
   ================================================================ */
-  --cd-body-text-color:                  #000;
-  --cd-faded-text-color:                 #555555;
+  --cd-body-text-color:                  #222222;
+  --cd-faded-text-color:                 #575757;
 
   /* ============================================================= */
   /* Borders
@@ -51,7 +51,7 @@
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color:          #131313;
+  --cd-navbar-background-color:          #222222;
   --cd-navbar-brand-color:               var(--cd-primary-color);
   --cd-navbar-brand-color-hover:         var(--cd-secondary-color);
   --cd-navbar-text-color:                var(--cd-content-background-color);
@@ -84,7 +84,7 @@
   --cd-navbar-dropdown-link-color-hover: var(--cd-primary-text-color);
 
   /* Divider */
-  --cd-navbar-dropdown-divider:          var(--cd-border-color);
+  --cd-navbar-dropdown-divider:          rgba(255,255,255,.12);
   --cd-navbar-dropdown-border-radius:    0 0 var(--cd-border-radius) var(--cd-border-radius);
 
 
@@ -118,7 +118,7 @@
   --cd-pagination-background-hover:      var(--cd-primary-color);
 
   /* Text */
-  --cd-pagination-text-color:            var(--cd-body-text-color);
+  --cd-pagination-text-color:            var(--cd-faded-text-color);
   --cd-pagination-text-color-hover:      var(--cd-primary-text-color);
 
   /* Border */
@@ -437,6 +437,32 @@ a:active {
 
 
 /* ============================================================= */
+/* Scrollbar
+/* ============================================================= */
+
+@media (min-width: 992px) {
+  body::-webkit-scrollbar-track {
+    background-color: var(--cd-faded-background-color);
+    border-width: 0px !important;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--cd-primary-color);
+  }
+
+  body::-webkit-scrollbar-corner,
+  body::-webkit-resizer {
+    background-color: var(--cd-border-color);
+  }
+}
+
+
+/* ============================================================= */
 /* Misc
 /* ============================================================= */
 
@@ -456,9 +482,27 @@ hr {
 
 /* ============================================================= */
 /* Chee's Tweaks
-/* You can delete anything below this line and everything
-/* should still look nice!
 /* ============================================================= */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adds min height so footer stays at the bottom */
+.masterlist-container {
+  -ms-flex: 1 1 auto!important;
+  flex: 1 1 auto!important;
+}
+
+/* Fades container in on load so its not as jarring */
+.masterlist-container {
+  opacity: 0;
+} .masterlist-container.softload {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
 
 /* Remove ugly box shadow */
 button:focus,
@@ -478,37 +522,29 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Adds min height so footer stays at the bottom */
-.masterlist-container {
-  min-height: calc(100vh - 73px);
-  opacity: 0;
-}
-
-.masterlist-container.softload {
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-
 /* Prevents awkward load in stutter */
 #charadex-gallery .list .card-body {
   min-height: 225px;
-}
-
-#charadex-gallery .list .card-body img {
+} #charadex-gallery .list .card-body img {
   max-height: 200px;
 }
 
+/* Sticky top for filters */
 #charadex-filters {
   position: sticky;
   top: 0;
   z-index: 1750;
 }
 
+/* Loading Icon */
 #loading {
-  width: 3rem; 
-  height: 3rem;
+  width: 5rem; 
+  height: 5rem;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  animation-duration: 2.5s;
+  top: calc(50% - 2.5rem);
+  left: calc(50% - 2.5rem);
+  animation-duration: 2s;
+  opacity: .5;
+  border-color: var(--cd-body-text-color);
+  border-right-color: transparent !important;
 }
