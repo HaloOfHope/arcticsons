@@ -135,13 +135,18 @@ const charadex = (options) => {
           sheetArray[len].link = url.href + preParam + sheetArray[len].id;
 
           // Adding images (if you choose to upload to your site instead)
-          if (charadexInfo.imageFolder && !sheetArray[0].hasOwnProperty('image')) {
-            sheetArray[len].image = `${charadexInfo.imageFolder}/myo.png`;
+          if (charadexInfo.imageFolder) {
+
+            if (!sheetArray[len].image) {
+              sheetArray[len].image = `${charadexInfo.imageFolder}/myo.png`;
+            }
+
             if (sheetArray[len].designer && sheetArray[len].artist) {
               sheetArray[len].image = `${charadexInfo.imageFolder}/${sheetArray[len].id}.png`;
             } else if (sheetArray[0].hasOwnProperty('species') && (sheetArray[len].designer == '' && sheetArray[len].artist == '')) {
               sheetArray[len].image = `${charadexInfo.imageFolder}/myo_${sheetArray[len].species.toLowerCase()}.png`;
             }
+
           }
 
           // Add vanila ID so it'll sort nicer
