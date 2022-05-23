@@ -9,7 +9,6 @@ const charadex = (options) => {
     sheetPage: "",
     itemAmount: "",
     itemOrder: "",
-    imageFolder: "",
     searchParams: "",
     urlFilterParam: "",
   };
@@ -34,7 +33,6 @@ const charadex = (options) => {
     sheetPage: userOptions.sheetPage || "Public Masterlist",
     itemAmount: userOptions.itemAmount || 12,
     itemOrder: userOptions.itemOrder || "desc",
-    imageFolder: userOptions.imageFolder || false,
     searchParams: userOptions.searchParams || ['id', 'owner', 'artist', 'designer'],
     urlFilterParam: userOptions.urlFilterParam.toLowerCase().replace(/\s/g,'') || false,
   };
@@ -133,22 +131,7 @@ const charadex = (options) => {
 
           // Adding link
           sheetArray[len].link = url.href + preParam + sheetArray[len].id;
-
-          // Adding images (if you choose to upload to your site instead)
-          if (charadexInfo.imageFolder) {
-
-            if (!sheetArray[len].image) {
-              sheetArray[len].image = `${charadexInfo.imageFolder}/myo.png`;
-            }
-
-            if (sheetArray[len].designer && sheetArray[len].artist) {
-              sheetArray[len].image = `${charadexInfo.imageFolder}/${sheetArray[len].id}.png`;
-            } else if (sheetArray[0].hasOwnProperty('species') && (sheetArray[len].designer == '' && sheetArray[len].artist == '')) {
-              sheetArray[len].image = `${charadexInfo.imageFolder}/myo_${sheetArray[len].species.toLowerCase()}.png`;
-            }
-
-          }
-
+          
           // Add vanila ID so it'll sort nicer
           sheetArray[len].orderID = sheetArray[len].id.replace(/\D+/gm,"");
 

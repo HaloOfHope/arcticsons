@@ -55,29 +55,23 @@
     /* ------------------------------------------------------------------- */
     let yourOptions = {
 
-    // Sheet Information
-    sheetID: "1NclmNdLUJkv92tsOwbrtJPK31TniXUIplhfLF6nHVpQ",
-    sheetPage: "Faejin",
+      // Sheet Information
+      sheetID: "1NclmNdLUJkv92tsOwbrtJPK31TniXUIplhfLF6nHVpQ",
+      sheetPage: "Faejin",
 
-    // Amount of items shown on the page. Default is 12.
-    itemAmount: 12,
+      // Amount of items shown on the page. Default is 12.
+      itemAmount: 12,
 
-    // Ascending  (1 2 3) || asc
-    // Descending (3 2 1) || desc
-    itemOrder: "desc",
+      // Ascending  (1 2 3) || asc
+      // Descending (3 2 1) || desc
+      itemOrder: "desc",
 
-    // If you're hosting images to your site, please fill this out with
-    // the path to your folder. Note that the 'Images' column must be
-    // removed from the Google Sheet.
-    // i.e. imgs/ml-images
-    imageFolder: "",
+      // Columns the search looks through by default
+      searchParams: ['id', 'owner', 'artist', 'designer'],
 
-    // Columns the search looks through by default
-    searchParams: ['id', 'owner', 'artist', 'designer'],
-
-    // Creates 1 URL parameter that will filter the list based on a
-    // column of your choosing.
-    urlFilterParam: 'species',
+      // Creates 1 URL parameter that will filter the list based on a
+      // column of your choosing.
+      urlFilterParam: 'species',
 
     };
   </script>
