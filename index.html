@@ -51,13 +51,13 @@
   <script>
     /* ------------------------------------------------------------------- */
     /* Options
-    /* You can remove all of these
+    /* You can remove the items you're not using
     /* ------------------------------------------------------------------- */
     let yourOptions = {
 
       // Sheet Information
       sheetID: "1NclmNdLUJkv92tsOwbrtJPK31TniXUIplhfLF6nHVpQ",
-      sheetPage: "Faejin",
+      sheetPage: "Public Masterlist",
 
       // Amount of items shown on the page. Default is 12.
       itemAmount: 12,
@@ -71,15 +71,13 @@
 
       // Creates 1 URL parameter that will filter the list based on a
       // column of your choosing.
-      urlFilterParam: 'species',
+      urlFilterParam: '',
 
     };
   </script>
 
   <!-- --------------------------------------------------------------------
-  <-- 
   <-- Navbar 
-  <-- 
   <-------------------------------------------------------------------- -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container">
@@ -120,17 +118,26 @@
   <div class="spinner-border m-auto" id="loading"></div>
   
   <!-- --------------------------------------------------------------------
-  <-- 
   <-- Masterlist
-  <-- 
   <-------------------------------------------------------------------- -->
   <div class="container masterlist-container d-flex flex-column py-md-5 py-4">
 
     <!-- URL Param Filter Buttons Render
+    <-- Remove this if you'd like to make your own buttons instead!
     ------------------------------------------------------------------- -->
     <div class="card p-4 mb-4" style="display:none;" id="filter-buttons">
       <ul class="row no-gutters list list-unstyled m-n2"></ul>
     </div>
+
+    <!-- Custom Button Example
+    ------------------------------------------------------------------- -->
+    <!--
+    <div class="card p-4 mb-4" style="display:none;" id="filter-buttons">
+      <div class="row no-gutters">
+        <div class="col-4 p-1"><a href="?[searchParam]=[thing its searching for]" class="btn btn-primary d-block">[thing its searching for]</a></div>
+      </div>
+    </div>
+    -->
 
 
     <!-- Gallery Container
@@ -143,7 +150,10 @@
       <div class="card p-4 mb-4 sticky-top" style="display:none;" id="charadex-filters">
         <div class="row no-gutters m-n2">
 
-          <!-- Custom Filter -->
+          <!-- Custom Filter (Optional) 
+          <-- Fill in the <option></options> with the items you want it to filter
+              through. Make sure that filter="" matches the column with said items.
+              Do not remove 'All' -->
           <div class="col-md-2 col-12 p-1">
             <select class="form-control bg-faded" filter="designtype" id="filter">
               <option>All</option>
@@ -153,7 +163,10 @@
             </select>
           </div>
 
-          <!-- Search Filter -->
+          <!-- Search Filter (Optional)
+          <-- Fill in the <option></options> with the items you want it to filter
+              through. 
+              Do not remove 'All' -->
           <div class="col-md-2 col-3 p-1">
             <select class="form-control bg-faded" id="search-filter">
               <option>All</option>
@@ -164,12 +177,12 @@
             </select>
           </div>
 
-          <!-- Search Bar -->
+          <!-- Search Bar (Optional) -->
           <div class="col-md-3 col-9 p-1">
             <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
           </div>
 
-          <!-- Top Pagination -->
+          <!-- Pagination -->
           <div class="col-md-5 col-12 d-flex justify-content-md-end justify-content-center p-1">
             <div class="nav d-flex">
               <div class="btn-prev page-item"><a class="page-link"><i class="bi bi-chevron-left"></i></a></div>
@@ -193,11 +206,8 @@
 
   
   <!-- --------------------------------------------------------------------
-  <-- 
   <-- Footer
-  <-- Please do not remove the credit - other creators might need a
-  <-- similar tool!
-  <-- 
+  <-- Please do not remove the credit
   <-------------------------------------------------------------------- -->
   <div class="footer bg-dark p-md-5 p-4 text-center">
     <p><a class="text-reset" href="">[Species] © [Owner]</a></p>
@@ -206,15 +216,14 @@
 
 
   <!-- --------------------------------------------------------------------
-  <-- 
   <-- Repeat Items
   <-- Do not remove 'display:none;'
-  <-- 
+  <-- Edit these to your liking
   <-------------------------------------------------------------------- -->
   <div style="display:none;">
 
 
-    <!-- URL Param Filter Buttons Render
+    <!-- URL Param Filter Buttons
     ------------------------------------------------------------------- -->
     <li class="col-lg col-sm-6 p-2" id="charadex-filter-buttons">
       <a class="btn btn-primary d-block link title" href=""></a>
@@ -342,7 +351,6 @@
 
   <!-- Charadex Script -->
   <script src="styles/charadex.js"></script>
-  <script>charadex(yourOptions);</script>
 
 
 </body>

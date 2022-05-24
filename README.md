@@ -1,35 +1,50 @@
 # Charadex v.4.0
 
-Created by Cheeriko. Created for the not-so-tech-savvy to maintain and host their masterlists with ease.
+After Eclipse took out DeviantArt, I made Charadex to help other species creators organize and keep easier track of their masterlist.
+
+**And it's not limited to species!** If you just sell adopts or what to make a little organizer for your characters - this might help. I use it to keep track of role play AU's and my own designs too!
+
+Please note I'm not an actual dev and have absolutely no formal training. I've just been learning JS here and there and I feel like even jank code is better than no code LOL
+
+&nbsp;
 
 ## Important
 
 You only need `index.html` and the `styles` folder with `charadex.css` & `charadex.js`! You do not need any other files for this to work! Please do not yell at me about Neocities not accepting the `README.md` file or I will steal all of your left shoes and fill them with marinara sauce.
 
- 
+&nbsp;
+
+## Helpful Links
+
+- [Getting Started](https://github.com/cheeriko/charadex/wiki/Getting-Started)
+- [Sheet Set-Up](https://github.com/cheeriko/charadex/wiki/Sheet-Set-Up)
+- [Site Set-Up](https://github.com/cheeriko/charadex/wiki/Site-Set-Up)
+
+&nbsp;
+
 ## Changelog
 
-**v.4.0 || My Third Eye Slightly Opened**
+### v.4.0 || My Third Eye Opens Slightly
 
 - Another semi-complete remake.
 - JS has been overhauled, and hopefully easier to read?
 - Downgraded to Bootstrap 4.5 since it is the closest to Toyhou.se's current version.
 - Added dropdown to sort by any column you specify. (Default: Design Type)
-- Added dropdown to search specific columns, (Such as only search owners or artists)
+- Added dropdown to search specific columns (such as only searching owners or artists)
 - Added prev/next links on single entry page for better navigation
 - Can now log multiple species! Hooray!
 - Fixed issue where Google Sheets would not output JSON with a header.
-- Slightly more updated look for the site template.
+- Updated look for the site template.
+- 'Softer' load in so it's not as jarring (shout out to all my light-sensitive besties out there, may your eyes prosper in these dark times)
+- Added more CSS variables for even easier customization
+- Reorganized the HTML a bit for better readability
+- Died (again)
 
----
-
-**v.3.6 || Hotfix**
+### v.3.6 || Hotfix
 
 - Sylueon patched the Google Sheet parser to parse the v4 API.
 
----
-
-**v.3.5 || Ultimate Edition**
+### v.3.5 || Ultimate Edition
 
 - Completely redid everything. Because I'm nuts.
 - Switched to list.js instead of pagination.js.
@@ -39,9 +54,7 @@ You only need `index.html` and the `styles` folder with `charadex.css` & `charad
 - Added the ability to add more info!! Like traits and junk.
 - Died.
 
----
-
-**v.2.0 || General Updates and QOL Fixes**
+### v.2.0 || General Updates and QOL Fixes
 
 - Consolidated the JS for the pages.
 - Added single cards you can link to and get the info.
@@ -49,14 +62,13 @@ You only need `index.html` and the `styles` folder with `charadex.css` & `charad
 - YOU DO NOT NEED TO UPDATE THE INDEX FILE! Just the JS and CSS.
 > All updates have been tested in major browsers, but I can't guarantee they'll work in lesser known browsers.
 
----
-
-**v.1.0 || Launch**
+### v.1.0 || Launch
 
 - I didn't keep a changlog up to this point so this is where we will Begin.
 - Added changelog
 
- 
+&nbsp;
+
 ## Credits
 
 - [Google Sheets](https://docs.google.com/spreadsheets/u/0/)
@@ -65,7 +77,8 @@ You only need `index.html` and the `styles` folder with `charadex.css` & `charad
 - [List.js](https://listjs.com/)
 - [Google Fonts](https://fonts.google.com/)
 
- 
+&nbsp;
+
 ## License Information
 
 > MIT License || Copyright (c) 2021 Chee

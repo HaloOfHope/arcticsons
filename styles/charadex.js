@@ -3,7 +3,6 @@ const charadex = (options) => {
   /* ==================================================================== */
   /* Importing Your Options
   ======================================================================= */
-
   let userOptions = options || {
     sheetID: "",
     sheetPage: "",
@@ -22,7 +21,7 @@ const charadex = (options) => {
 
 
   /* ==================================================================== */
-  /* Options
+  /* Sifting Through Options
   ======================================================================= */
   const charadexInfo = {
     sheetID: 
@@ -287,3 +286,6 @@ const charadex = (options) => {
 
     })
 };
+
+// Initiate Code
+charadex(yourOptions);
