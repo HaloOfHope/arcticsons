@@ -14,68 +14,21 @@ You only need `index.html` and the `styles` folder with `charadex.css` & `charad
 
 &nbsp;
 
-## Helpful Links
+## Navigation
 
+**Set Ups**
+
+- [Download](https://github.com/cheeriko/charadex/releases/latest)
 - [Getting Started](https://github.com/cheeriko/charadex/wiki/Getting-Started)
 - [Sheet Set-Up](https://github.com/cheeriko/charadex/wiki/Sheet-Set-Up)
 - [Site Set-Up](https://github.com/cheeriko/charadex/wiki/Site-Set-Up)
 
-&nbsp;
+**Other Information**
 
-## Changelog
-
-### v.4.0 || My Third Eye Opens Slightly
-
-- Another semi-complete remake.
-- JS has been overhauled, and hopefully easier to read?
-- Downgraded to Bootstrap 4.5 since it is the closest to Toyhou.se's current version.
-- Added dropdown to sort by any column you specify. (Default: Design Type)
-- Added dropdown to search specific columns (such as only searching owners or artists)
-- Added prev/next links on single entry page for better navigation
-- Can now log multiple species! Hooray!
-- Fixed issue where Google Sheets would not output JSON with a header.
-- Updated look for the site template.
-- 'Softer' load in so it's not as jarring (shout out to all my light-sensitive besties out there, may your eyes prosper in these dark times)
-- Added more CSS variables for even easier customization
-- Reorganized the HTML a bit for better readability
-- Died (again)
-
-### v.3.6 || Hotfix
-
-- Sylueon patched the Google Sheet parser to parse the v4 API.
-
-### v.3.5 || Ultimate Edition
-
-- Completely redid everything. Because I'm nuts.
-- Switched to list.js instead of pagination.js.
-- Added a nicer pagination and added the ability to search.
-- Simplified the google sheet, hopefully this helps keeps older/slower computers from dying.
-- HTML for the general masterlist and cards can now be edited in the HTML page, instead of in the JS.
-- Added the ability to add more info!! Like traits and junk.
-- Died.
-
-### v.2.0 || General Updates and QOL Fixes
-
-- Consolidated the JS for the pages.
-- Added single cards you can link to and get the info.
-- Added loading page.
-- YOU DO NOT NEED TO UPDATE THE INDEX FILE! Just the JS and CSS.
-> All updates have been tested in major browsers, but I can't guarantee they'll work in lesser known browsers.
-
-### v.1.0 || Launch
-
-- I didn't keep a changlog up to this point so this is where we will Begin.
-- Added changelog
-
-&nbsp;
-
-## Credits
-
-- [Google Sheets](https://docs.google.com/spreadsheets/u/0/)
-- [Bootstrap 4.5](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
-- [List.js](https://listjs.com/)
-- [Google Fonts](https://fonts.google.com/)
+- [FAQ](https://github.com/cheeriko/charadex/wiki#faq)
+- [Credits](https://github.com/cheeriko/charadex/wiki#credits-for-framework)
+- [License](https://github.com/cheeriko/charadex/wiki#license)
+- [Change Log](https://github.com/cheeriko/charadex/wiki/Change-Log)
 
 &nbsp;
 
