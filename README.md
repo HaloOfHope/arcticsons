@@ -10,7 +10,7 @@ Please note I'm not an actual dev and have absolutely no formal training. I've j
 
 ## Important
 
-You only need `index.html` and the `styles` folder with `charadex.css` & `charadex.js`! You do not need any other files for this to work! Please do not yell at me about Neocities not accepting the `README.md` file or I will steal all of your left shoes and fill them with marinara sauce.
+You only need `index.html` and the `styles` folder with `charadex.css` & `charadex.js`! You do not need any other files for this to work! Please do not yell at me about Neocities not accepting a different file type or I will steal all of your left shoes and fill them with marinara sauce.
 
 &nbsp;
 
