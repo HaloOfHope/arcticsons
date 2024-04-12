@@ -1,34 +1,35 @@
-# Charadex v.4.0
+# Charadex v.1.5.0
 
-After Eclipse took out DeviantArt, I made Charadex to help other species creators organize and keep easier track of their masterlist.
+Charadex v1.0 is a tool designed to simplify the creation and maintenance of species websites.
 
-And it's not limited to species! If you just sell adopts or what to make a little organizer for your characters - this might help. I use it to keep track of role play AU's and my own designs too!
+By utilizing Google Sheets, users can generate logs of designs, items, player inventories, and other data, which is then utilized to create a user-friendly website that external users can easily navigate. Additionally, it can be hosted for free and is relatively easy to maintain and customize.
 
-Please note I'm not an actual dev and have absolutely no formal training. I've just been learning JS here and there and I feel like even jank code is better than no code LOL
-
-&nbsp;
-
-<p align="center">Do not download from this page - please download the latest version <a href="https://github.com/cheeriko/charadex/releases/latest">here</a>.</p>
+If you're interested in using this tool, please refer to the links provided below. I've done my best to write up clear and concise documentation.
 
 &nbsp;
 
 # Navigation
 
-**Set Ups**
+**Download**
 
-- [Download](https://github.com/cheeriko/charadex/releases/latest)
-- [Getting Started](https://github.com/cheeriko/charadex/wiki/Getting-Started)
-- [Sheet Set-Up](https://github.com/cheeriko/charadex/wiki/Sheet-Set-Up)
-- [Site Set-Up](https://github.com/cheeriko/charadex/wiki/Site-Set-Up)
+- [Charadex](https://github.com/charadex-team/charadex-v1.0/releases/latest)
+- [Google Sheet](https://docs.google.com/spreadsheets/d/1ZtejMZmVxjQEpuSOcWcVbWbb8Lcj1zLRKJsjHL2G6JY/copy)
+
+**Setting Up**
+
+- [Getting Started](https://github.com/charadex-team/charadex-v1.0/wiki/v1.5.0-Getting-Started)
+- [Hosting](https://github.com/charadex-team/charadex-v1.0/wiki/Hosting)
+- [Sheet Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/v1.5.0-Sheet-Set-Up)
+- [Site Set-Up](https://github.com/charadex-team/charadex-v1.0/wiki/v1.5.0-Site-Set-Up)
 
 **Other Information**
 
-- [FAQ](https://github.com/cheeriko/charadex/wiki#faq)
-- [Credits](https://github.com/cheeriko/charadex/wiki#credits-for-framework)
-- [License](https://github.com/cheeriko/charadex/wiki#license)
-- [Change Log](https://github.com/cheeriko/charadex/wiki/Change-Log)
+- [FAQ](https://github.com/charadex-team/charadex-v1.0/wiki#faq)
+- [Credits](https://github.com/charadex-team/charadex-v1.0/wiki#credits)
+- [License](https://github.com/charadex-team/charadex-v1.0/wiki#license)
 
-**Resources**
+**Extra**
 
-- [Live Example](https://cheeriko.github.io/charadex/)
-- [Quickdex](https://cheeriko.github.io/charadex/quickdex/)
+- [Discord Server](https://discord.gg/3ghSjBug6a)
+- [Support Charadex](https://ko-fi.com/charadex)
+- [Example Sheet](https://docs.google.com/spreadsheets/d/1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak/edit?usp=sharing)
